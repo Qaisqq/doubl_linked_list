@@ -27,8 +27,21 @@ def test_remove_get_last(dll):
     dll.display_list()
     dll.remove_get_last()
 ## curent list None
+def test_remove_get_index():
+    dll = DoubleLinkedList()
+    dll.append_first(5)
+    dll.append_first(4)
+    dll.append_first(3)
+    dll.append_first(2)
+    dll.append_first(1)
+    dll.remove_get_index(0)
+    dll.remove_get_index(3)
+    dll.remove_get_index(1)
+    dll.display_list()
+
 if __name__ == "__main__":
     test_append_first(dll)
     test_display_list(dll)
     test_remove_get_first(dll)
     test_remove_get_last(dll)
+    test_remove_get_index()

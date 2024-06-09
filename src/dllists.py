@@ -64,4 +64,23 @@ class DoubleLinkedList:
             self.count -=1
         return temp
     
-        ##
+    def remove_get_index(self, index):
+        if self.count == 0:
+            print("list is empty")
+        elif index == 0:
+            self.remove_get_first()
+        elif index+1 == self.count:
+            self.remove_get_last()
+        else:
+        # mid = self.count / 2  <- can use this for O(n/2)
+        # if index > mid:
+            curr = self.head
+            counter = 0
+            while counter != index:
+                curr = curr.nxt
+                counter +=1
+            temp = curr.data
+            curr.nxt.prev = curr.prev
+            curr.prev.nxt = curr.nxt
+            self.count -=1
+            return temp
