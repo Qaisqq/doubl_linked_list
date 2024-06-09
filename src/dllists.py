@@ -35,12 +35,31 @@ class DoubleLinkedList:
         curr = self.head
         while curr:
             print(f"<-{curr.data}->", end='' )
-            print()
             curr = curr.nxt
+        print()
 
     def remove_get_first(self):
         temp = self.head.data
-        self.head = self.head.nxt
-        self.head.prev = None
-        self.count -=1
+        if self.count == 0:
+            print("list is empty")
+        elif self.count == 1:
+            self.head, self.tail == 0
+            self.count -=1
+        else:
+            self.head = self.head.nxt
+            self.head.prev = None
+            self.count -=1
+        return temp
+    
+    def remove_get_last(self):
+        temp = self.tail.data
+        if self.count == 0:
+            print("list is empty")
+        elif self.count == 1:
+            self.head, self.tail == 0
+            self.count -=1
+        else:
+            self.tail = self.tail.prev
+            self.tail.nxt = None
+            self.count -=1
         return temp

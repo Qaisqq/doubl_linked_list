@@ -21,7 +21,14 @@ def test_remove_get_first(dll):
     assert temp == 2
     dll.display_list()
 ## curent list <-1->
+def test_remove_get_last(dll):
+    temp = dll.remove_get_last()
+    assert temp == 1
+    dll.display_list()
+    dll.remove_get_last()
+## curent list None
 if __name__ == "__main__":
     test_append_first(dll)
     test_display_list(dll)
     test_remove_get_first(dll)
+    test_remove_get_last(dll)
