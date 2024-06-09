@@ -63,3 +63,5 @@ class DoubleLinkedList:
             self.tail.nxt = None
             self.count -=1
         return temp
+    
+        ##
