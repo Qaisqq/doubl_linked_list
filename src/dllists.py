@@ -30,6 +30,7 @@ class DoubleLinkedList:
             self.tail.nxt = new_node
             new_node.prev = self.tail
             self.tail = new_node
+            self.count += 1
 
     def display_list(self):
         curr = self.head
@@ -71,6 +72,8 @@ class DoubleLinkedList:
             self.remove_get_first()
         elif index+1 == self.count:
             self.remove_get_last()
+        elif index+1 > self.count:
+            print("index not in list")
         else:
         # mid = self.count / 2  <- can use this for O(n/2)
         # if index > mid:

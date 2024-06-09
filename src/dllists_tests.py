@@ -12,20 +12,26 @@ def test_append_first(dll):
     assert dll.head.nxt.data == 1, "order isnt correct"
     assert dll.tail.data == 1, "order isnt correct"
     assert dll.tail.prev.data == 2, "order isnt correct"
+
+
 ## curent list <-2-><-1->
 def test_display_list(dll):
     dll.display_list()
+
+
 ## curent list <-2-><-1->
 def test_remove_get_first(dll):
     temp = dll.remove_get_first()
     assert temp == 2
     dll.display_list()
+
 ## curent list <-1->
 def test_remove_get_last(dll):
     temp = dll.remove_get_last()
     assert temp == 1
     dll.display_list()
     dll.remove_get_last()
+
 ## curent list None
 def test_remove_get_index():
     dll = DoubleLinkedList()
