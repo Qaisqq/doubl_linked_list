@@ -4,15 +4,12 @@ class Node:
         self.nxt = nxt
         self.prev = prev
 
-    
-
 class DoubleLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
         self.count = 0
 
-    # step1:
     def append_first(self, data):
         new_node = Node(data)
         if self.head == None:
@@ -24,7 +21,7 @@ class DoubleLinkedList:
             new_node.nxt = self.head
             self.head = new_node
             self.count +=1
-    
+
     def insert_last(self, data):
         new_node = Node(data)
         if self.head == None:
@@ -34,7 +31,8 @@ class DoubleLinkedList:
             new_node.prev = self.tail
             self.tail = new_node
 
-    # def display_list(self):
-    #     curr = self.head
-    #     while curr.nxt:
-    #         curr = curr.nxt
+    def display_list(self):
+        curr = self.head
+        while curr:
+            print(f"<-{curr.data}->", end='' )
+            curr = curr.nxt
