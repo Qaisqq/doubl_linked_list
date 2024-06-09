@@ -35,4 +35,12 @@ class DoubleLinkedList:
         curr = self.head
         while curr:
             print(f"<-{curr.data}->", end='' )
+            print()
             curr = curr.nxt
+
+    def remove_get_first(self):
+        temp = self.head.data
+        self.head = self.head.nxt
+        self.head.prev = None
+        self.count -=1
+        return temp
